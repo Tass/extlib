@@ -1,5 +1,3 @@
-require "pathname"
-
 class String
   ##
   # Convert to snake case.

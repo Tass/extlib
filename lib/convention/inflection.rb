@@ -1,6 +1,4 @@
-require 'extlib/string'
-
-module Extlib
+module Convention
 
   # = English Nouns Number Inflection.
   #
@@ -428,15 +426,4 @@ module Extlib
     plural_rule 'fe'  , 'ves'  # don't want to snag perspectives
 
   end
-end
-
-class String
-  def singular
-    Extlib::Inflection.singular(self)
-  end
-  alias_method(:singularize, :singular)
-  def plural
-    Extlib::Inflection.plural(self)
-  end
-  alias_method(:pluralize, :plural)
 end
