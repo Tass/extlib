@@ -1,6 +1,6 @@
 = extlib
 
-Support library for DataMapper and Merb.
+Support library that provies inflection and snake/camel_case either via extlib or AS or by itself.
 
 == Note on Patches/Pull Requests
 
@@ -14,4 +14,4 @@ Support library for DataMapper and Merb.
 
 == Copyright
 
-Copyright (c) 2010 Dan Kubb. See LICENSE for details.
+Copyright (c) 2010 Simon Hafner. See LICENSE for details.

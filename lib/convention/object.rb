@@ -1,6 +1,3 @@
-require 'set'
-require 'extlib/blank'
-
 class Object
   # Extracts the singleton class, so that metaprogramming can be done on it.
   #
@@ -107,72 +104,4 @@ class Object
     current_module
   end
 
-  # @param duck<Symbol, Class, Array> The thing to compare the object to.
-  #
-  # @note
-  #   The behavior of the method depends on the type of duck as follows:
-  #   Symbol:: Check whether the object respond_to?(duck).
-  #   Class:: Check whether the object is_a?(duck).
-  #   Array::
-  #     Check whether the object quacks_like? at least one of the options in the
-  #     array.
-  #
-  # @return [Boolean]
-  #   True if the object quacks like duck.
-  def quacks_like?(duck)
-    case duck
-    when Symbol
-      self.respond_to?(duck)
-    when Class
-      self.is_a?(duck)
-    when Array
-      duck.any? {|d| self.quacks_like?(d) }
-    else
-      false
-    end
-  end
-
-  # Override this in a child if it cannot be dup'ed
-  #
-  # @return [Object]
-  def try_dup
-    self.dup
-  end
-
-  # If receiver is callable, calls it and
-  # returns result. If not, just returns receiver
-  # itself
-  #
-  # @return [Object]
-  def try_call(*args)
-    if self.respond_to?(:call)
-      self.call(*args)
-    else
-      self
-    end
-  end
-
-  # @param arrayish<#include?> Container to check, to see if it includes the object.
-  # @param *more<Array>:: additional args, will be flattened into arrayish
-  #
-  # @return [Boolean]
-  #   True if the object is included in arrayish (+ more)
-  #
-  # @example 1.in?([1,2,3]) #=> true
-  # @example 1.in?(1,2,3) #=> true
-  def in?(arrayish,*more)
-    arrayish = more.unshift(arrayish) unless more.empty?
-    arrayish.include?(self)
-  end
-
-  # Add instance_variable_defined? for backward compatibility
-  # @param variable<Symbol, String>
-  #
-  # @return [Boolean]
-  #   True if the object has the given instance variable defined
-  unless respond_to?(:instance_variable_defined?)
-    def instance_variable_defined?(variable)
-      instance_variables.include?(variable.to_s)
-    end
-  end
 end

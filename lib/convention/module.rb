@@ -1,6 +1,5 @@
 require 'extlib/object'
 require 'extlib/class'
-require 'extlib/blank'
 
 class Module
   def find_const(const_name)
@@ -9,10 +8,6 @@ class Module
     else
       nested_const_lookup(const_name)
     end
-  end
-
-  def try_dup
-    self
   end
 
   private
