@@ -1,4 +1,4 @@
-= extlib
+= convention
 
 Support library that provies inflection and snake/camel_case either via extlib or AS or by itself.
 
