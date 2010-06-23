@@ -7,8 +7,6 @@ class String
   #   "CNN".snake_case              #=> "cnn"
   #
   # @return [String] Receiver converted to snake case.
-  #
-  # @api public
   def snake_case
     return downcase if match(/\A[A-Z]+\z/)
     gsub(/([A-Z]+)([A-Z][a-z])/, '\1_\2').
@@ -22,8 +20,6 @@ class String
   #   "foo_bar".camel_case          #=> "FooBar"
   #
   # @return [String] Receiver converted to camel case.
-  #
-  # @api public
   def camel_case
     return self if self !~ /_/ && self =~ /[A-Z]+.*/
     split('_').map{|e| e.capitalize}.join

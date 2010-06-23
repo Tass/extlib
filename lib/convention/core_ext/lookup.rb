@@ -6,7 +6,7 @@ class Module
     else
       nested_const_lookup(const_name)
     end
-  end
+  end unless method_defined? :find_const
 
   private
 
@@ -34,12 +34,12 @@ class Module
           end
         end
       end
-    end
+    end unless method_defined? :nested_const_lookup
 
     # no relative constant found, fallback to an absolute lookup and
     # use const_missing if not found
     Object.full_const_get(const_name)
-  end
+  end unless method_defined? :nested_const_lookup
 end
 
 class Object
@@ -57,7 +57,7 @@ class Object
       obj = obj.const_defined?(x) ? obj.const_get(x) : obj.const_missing(x)
     end
     obj
-  end
+  end unless method_defined? :full_const_get
 
   # @param name<String> The name of the constant to get, e.g. "Merb::Router".
   # @param value<Object> The value to assign to the constant.
@@ -70,7 +70,7 @@ class Object
     last = list.pop
     obj = list.empty? ? Object : Object.full_const_get(list.join("::"))
     obj.const_set(last, value) if obj && !obj.const_defined?(last)
-  end
+  end unless method_defined? :full_const_set
 
   # Defines module from a string name (e.g. Foo::Bar::Baz)
   # If module already exists, no exception raised.
@@ -88,6 +88,6 @@ class Object
       end
     end
     current_module
-  end
+  end unless method_defined? :make_module
 
 end
