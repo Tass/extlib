@@ -1,6 +1,6 @@
 # So we can test with all provided solutions
 #BareTest.new_component :inflection do
-require 'convention/inflection'
+require 'inflection'
 suite 'Inflection', :use => :tabular_data do
   suite 'bijective' do
     setup.tabular_data <<-TABLE
@@ -18,7 +18,7 @@ suite 'Inflection', :use => :tabular_data do
     end
 
     exercise "converting :singular <=> :plural from :from" do
-      ::Convention::Inflection.send(@to, send(@from))
+      ::Inflection.send(@to, send(@from))
     end
     verify "returns :to" do
       returns(send(@to))
@@ -30,7 +30,7 @@ suite 'Inflection', :use => :tabular_data do
     setup.tabular_data(File.read(File.expand_path('../injective', __FILE__)))
 
     exercise "converting :plural" do
-      ::Convention::Inflection.singular(@plural)
+      ::Inflection.singular(@plural)
     end
     verify "returns :singular" do
       returns(@singular)
