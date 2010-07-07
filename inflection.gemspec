@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{inflection}
-  s.version = "0.1"
+  s.version = "0.1.1"
 
   s.authors = ["Dan Kubb", "Simon Hafner"]
   s.description = %q{Support library for inflections}
