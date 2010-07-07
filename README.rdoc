@@ -1,6 +1,6 @@
-= convention
+= inflection
 
-Support library that provies inflection and snake/camel_case either via extlib or AS or by itself.
+Support library that provies english inflection.
 
 == Note on Patches/Pull Requests
 
