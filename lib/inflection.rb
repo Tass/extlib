@@ -240,6 +240,7 @@ module Inflection
   word 'status'
   word 'pokemon'
   word 'pokémon'
+  word 'mysql'
 
   # Two arguments defines a singular and plural exception.
   word 'alias'      , 'aliases'
@@ -282,6 +283,22 @@ module Inflection
   word 'wife'       , 'wives'
   word 'tooth'      , 'teeth'
   word 'penis'      , 'penises'
+  word 'stimulus'   , 'stimuli'
+  word 'shaman'     , 'shamans'
+  word 'rookie'     , 'rookies'
+  word 'radius'     , 'radii'
+  word 'talisman'   , 'talismans'
+  word 'syllabus'   , 'syllabi'
+  word 'move'       , 'moves'
+  word 'human'      , 'humans'
+  word 'hippopotamus', 'hippopotami'
+  word 'german'     , 'germans'
+  word 'fungus'     , 'fungi'
+  word 'focus'      , 'foci'
+  word 'die'        , 'dice'
+  word 'alumnus'    , 'alumni'
+  word 'appendix'   , 'appendices'
+  word 'arena'      , 'arenas'
 
   # One-way singularization exception (convert plural to singular).
 
@@ -312,6 +329,7 @@ module Inflection
   rule 'ffe'    , 'ffes'
   rule 'afe'    , 'aves'
   rule 'ouse'   , 'ouses'
+  rule 'ive'    , 'ives' # don't want to snag wife
   # more cases of words ending in -oses not being singularized properly
   # than cases of words ending in -osis
 #    rule 'osis'   , 'oses'
@@ -323,6 +341,8 @@ module Inflection
   rule 'a'      , 'ae'
   rule 'um'     , 'a'
 
+  # cookie / bookie
+  rule 'ookie'  , 'ookies'
   # One-way singular rules.
 
   singular_rule 'of' , 'ofs' # proof
@@ -333,7 +353,6 @@ module Inflection
 
   #plural_rule 'fe' , 'ves' # safe, wife
   plural_rule 's'   , 'ses'
-  plural_rule 'ive' , 'ives' # don't want to snag wife
   plural_rule 'fe'  , 'ves'  # don't want to snag perspectives
 
 end
