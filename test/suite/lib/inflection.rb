@@ -25,7 +25,7 @@ suite 'Inflection', :use => :tabular_data do
     end
   end
 
-  suite 'injective singular -> plural' do
+  suite 'injective plural -> singular' do
 
     setup.tabular_data(File.read(File.expand_path('../injective', __FILE__)))
 
