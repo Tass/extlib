@@ -34,7 +34,7 @@ class Module
           end
         end
       end
-    end unless method_defined? :nested_const_lookup
+    end
 
     # no relative constant found, fallback to an absolute lookup and
     # use const_missing if not found

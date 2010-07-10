@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{convention}
-  s.version = "0.0.1"
+  s.version = "0.1.0"
 
   s.authors = ["Dan Kubb", "Simon Hafner"]
   s.description = %q{Support library for basic conventions}
@@ -15,6 +15,7 @@ Gem::Specification.new do |s|
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.7}
-  s.summary = %q{Provies inflection and snake/camel_case either via extlib or AS or by itself.}
+  s.add_dependency 'inflection'
+  s.summary = %q{Small library for conventions like find_const and other stuff.}
 end
 

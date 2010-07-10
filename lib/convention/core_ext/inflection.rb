@@ -1,13 +1,13 @@
-require 'convention/provide/inflection'
+require 'inflection'
 
 class String
 
   def singular
-    Convetion::Inflection.singular(self)
+    Inflection.singular(self)
   end unless method_defined? :singular
 
   def plural
-    Convetion::Inflection.plural(self)
+    Inflection.plural(self)
   end unless method_defined? :plural
 
 end

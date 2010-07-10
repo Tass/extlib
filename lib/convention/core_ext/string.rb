@@ -12,7 +12,7 @@ class String
     gsub(/([A-Z]+)([A-Z][a-z])/, '\1_\2').
     gsub(/([a-z])([A-Z])/, '\1_\2').
     downcase
-  end
+  end unless method_defined? :snake_case
 
   ##
   # Convert to camel case.
@@ -23,5 +23,5 @@ class String
   def camel_case
     return self if self !~ /_/ && self =~ /[A-Z]+.*/
     split('_').map{|e| e.capitalize}.join
-  end
+  end unless method_defined? :camel_case
 end # class String
