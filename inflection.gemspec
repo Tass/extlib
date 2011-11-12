@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{inflection}
-  s.version = "0.1.1"
+  s.version = "1.0.0"
 
   s.authors = ["Dan Kubb", "Simon Hafner"]
   s.email = ["hafnersimon", "gmail.com"].join(64.chr)
